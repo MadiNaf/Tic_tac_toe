@@ -38,7 +38,6 @@ class Board
 						print "\n"
 						print (" "*2 + " - ")*3  + "\n"	
 				end
-								binding.pry
 		end
 
 		# A method that gives the number of cases played
