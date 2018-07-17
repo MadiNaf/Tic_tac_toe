@@ -26,7 +26,7 @@ class Board
 		# A that displays graphically the board
 		
 		def display
-				print (" "*2 + " - ")*3  + "\n"	
+				print (" "*2 + " -")*3  + "\n"	
 
 				position = ""
 						
@@ -36,7 +36,7 @@ class Board
 								print select_case(i.to_s + j.to_s).symbol.to_s + " | "
 						end
 						print "\n"
-						print (" "*2 + " - ")*3  + "\n"	
+						print (" "*2 + " -")*3  + "\n"	
 				end
 		end
 

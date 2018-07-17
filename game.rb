@@ -59,12 +59,12 @@ class Game
 				results =[line, column, diagonal]
 				results.flatten.each{|r| 
 						if r == @player1.symbol.to_s*3
-								@game_over = "Well done #{@player1.name}"
+								@game_over = "YOU WIN #{@player1.name}"
 								return @game_over
 						end
 
 						if r == @player2.symbol.to_s*3
-								@game_over = "Well done #{@player2.name}"
+								@game_over = "YOU WIN  #{@player2.name}"
 								return @game_over
 						end
 				}
