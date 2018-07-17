@@ -1,43 +1,34 @@
 require 'pry'
+require 'board.rb'
+require 'boardcase.rb'
+require 'game.rb'
 
 class Player
 
-				attr_accessor :name, :symbol, :next_player, :count
+		attr_accessor :name, :symbol
 
-				@@count = 0
+		@@count = 0
 
-				def initialize(next_player = true)
+		def initialize(next_player = true)
 
-								puts "Enter a name"
-								@name = gets.chomp 
+				puts "Enter a name"
+				@name = gets.chomp 
 
-								puts "Ok #{@name}, what symbol do you choose? ( 'o' or 'x' )"
-								@symbol = gets.chomp
-								
-								@next_player = next_player
+				puts "Ok #{@name}, what symbol do you choose? ( 'o' or 'x' )"
+				@symbol = gets.chomp
 
-								counter # counts one object creation
-
-				end
+		end
 				
-				def play
-
+		def play(game)
 								
-								# Ask for the wanted position
-								puts "#{@name}, what position do you wanna play?"
-								# Get a response
-								response = gets.chomp
+				# Ask for the wanted position
+				puts "#{@name}, what position do you wanna play?"
+				# Get a response
+				response = gets.chomp
 
-								a = @board.grid.select{|c| c.select{|c| c.position == response }}
+				game.board.select_case(response).symbol = @symbol
+				game.board.select_case(response).empty = false 
+		end
 
-								a[response[0]][response[1]].empty =false 
-								@board.grid = a
-								
-							end
-
-				# Calculates the number of created instances
-				private def counter
-							@@count += 1
-				end
 end
 
